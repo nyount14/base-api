@@ -24,6 +24,12 @@ Rails.application.routes.draw do
         delete :logout
         get :me
         post :create
+        namespace :tasks do
+          post :create
+          get :all
+          put :update
+          delete :delete
+        end
       end
     end
   end
