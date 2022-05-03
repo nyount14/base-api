@@ -24,7 +24,7 @@ Rails.application.routes.draw do
         delete :logout
         get :me
         post :create
-        namespace :tasks do
+        namespace :mytasks do
           post :create
           get :all
           put :update
