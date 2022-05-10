@@ -24,12 +24,13 @@ Rails.application.routes.draw do
         delete :logout
         get :me
         post :create
-        namespace :mytasks do
-          post :create
-          get :all
-          put :update
-          delete :delete
-        end
+      end
+      
+      # post request - # localhost:3000/api/v1/tasks/my_tasks
+      resources :tasks, only: [:create, :destroy, :update]
+      
+      namespace :books do 
+        get :my_tasks
       end
     end
   end
