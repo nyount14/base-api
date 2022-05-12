@@ -7,14 +7,14 @@ module Api
           # create a task
           result = Tasks.new_task(task_params, @current_user)
           # STEP 2 - return a failure response depending on what result is 
-          render_error(errors: "Task was not saved successfully") and return unless result.success?
+          # render_error(errors: "Task was not saved successfully") and return unless result.success?
   
-          # STEP 3 - define a payload 
-          payload = {
-            task: TaskBlueprint.render_as_hash(result.payload)
-          }
-          # STEP 4 - return a successful response with the payload
-          render_success(payload: payload)
+          # # STEP 3 - define a payload 
+          # payload = {
+          #   task: TaskBlueprint.render_as_hash(result.payload)
+          # }
+          # # STEP 4 - return a successful response with the payload
+          # render_success(payload: payload)
         end
   
         # update 
@@ -48,7 +48,7 @@ module Api
   
         private 
         def task_params 
-          params.require(:task).permit(:task, :user_id)
+          params.require(:task).permit(:task)
         end
       end
     end
