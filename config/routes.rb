@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       # post request - # localhost:3000/api/v1/tasks/my_tasks
       resources :tasks, only: [:create, :destroy, :update]
       
-      namespace :books do 
+      namespace :tasks do 
         get :my_tasks
       end
     end
